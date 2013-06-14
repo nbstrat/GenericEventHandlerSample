@@ -6,8 +6,8 @@
         Dim H As Integer = 25
         Dim W As Integer = 75
         Dim Padding As Integer = 25
-        Dim StartX As Integer = 86
-        Dim StartY As Integer = 50 + H
+        Dim StartX As Integer = 100
+        Dim StartY As Integer = 40 + H + Padding
         Dim StartPoint = New System.Drawing.Point(StartX, StartY)
         Dim defaultFont As Font = New System.Drawing.Font("Segoe UI", 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         
@@ -27,10 +27,10 @@
         ' hook the button to a generic event handler
         AddHandler btnClickButton.Click, AddressOf ButtonClickEvent
 
-        'apply the offset to positioning the next button just below the first
+        'apply the positioning offset to define the location to place a second button
         StartPoint.Offset(0, H + Padding)
 
-        'create a second button that will toggle the display of the first button
+        'create a second button 
         Dim btnClickButton2 As Button = New Button
         With btnClickButton2
             .Name = "btnToggle"
@@ -46,9 +46,8 @@
         ' hook the button to a generic event handler
         AddHandler btnClickButton2.Click, AddressOf ButtonClickEvent
 
-        ' !!!! you are not limited to click events !!! 
+        ' !!! you are not limited to click events !!! 
         'AddHandler btnClickButton2.VisibleChanged, AddressOf btnVisibleChanged
-
 
     End Sub
 
@@ -72,7 +71,6 @@
     Private Sub GetAllControl(c As Control, list As List(Of Control))
         For Each control As Control In c.Controls
             list.Add(control)
-
             If control.[GetType]() = GetType(Panel) Then
                 GetAllControl(control, list)
             End If

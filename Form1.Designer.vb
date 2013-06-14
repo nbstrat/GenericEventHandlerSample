@@ -27,9 +27,10 @@ Partial Class Form1
         '
         'btnStart
         '
-        Me.btnStart.Location = New System.Drawing.Point(86, 28)
+        Me.btnStart.AutoSize = True
+        Me.btnStart.Location = New System.Drawing.Point(100, 40)
         Me.btnStart.Name = "btnStart"
-        Me.btnStart.Size = New System.Drawing.Size(75, 23)
+        Me.btnStart.Size = New System.Drawing.Size(75, 25)
         Me.btnStart.TabIndex = 0
         Me.btnStart.Text = "Start"
         Me.btnStart.UseVisualStyleBackColor = True
@@ -43,6 +44,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnStart As System.Windows.Forms.Button
